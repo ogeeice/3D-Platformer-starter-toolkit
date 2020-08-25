@@ -1,0 +1,254 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/Test.gd" type="Script" id=4]
+[ext_resource path="res://Scene/Bouncepad.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Health.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.494118, 0.866667, 0.823529, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.74902, 0.0784314, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 1, 1, 1, 0 )
+
+[node name="Test" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.616818, 0.386127, -0.685887, 0.111252, 0.905425, 0.409669, 0.779204, 0.176385, -0.60144, 0, 4.37309, 35.1934 )
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97849, 15.561, 25.532 )
+
+[node name="Coins" type="Spatial" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 50.7158, 13.9017, -8.18358 )
+
+[node name="coin2" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 55.4104, 13.9017, -8.18358 )
+
+[node name="coin3" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 59.5295, 13.9017, -8.18358 )
+
+[node name="coin6" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 50.7158, 13.9017, -3.17248 )
+
+[node name="coin5" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 55.4104, 13.9017, -3.17248 )
+
+[node name="coin4" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 59.5295, 13.9017, -3.17248 )
+
+[node name="coin9" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 1.63461, 2.07058, -3.17248 )
+
+[node name="coin8" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 6.32915, 2.07058, -3.17248 )
+
+[node name="coin7" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 10.4483, 2.07058, -3.17248 )
+
+[node name="coin12" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 1.63461, 2.07058, -14.068 )
+
+[node name="coin11" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 6.32915, 2.07058, -14.068 )
+
+[node name="coin10" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 10.4483, 2.07058, -14.068 )
+
+[node name="coin15" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 1.63461, 2.07058, 6.28639 )
+
+[node name="coin14" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 6.32915, 2.07058, 6.28639 )
+
+[node name="coin13" parent="Coins" instance=ExtResource( 3 )]
+transform = Transform( 0.833944, 1.96056e-15, -0.55185, 0, 1, 0, 0.55185, -2.96276e-15, 0.833944, 10.4483, 2.07058, 6.28639 )
+
+[node name="Health" type="Spatial" parent="."]
+
+[node name="Health" parent="Health" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96286, 7.58331 )
+
+[node name="Platforms" type="Spatial" parent="."]
+
+[node name="platform1" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -22.5359, 3.57146, 0 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform2" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -33.9468, 7.106, -31.2929 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform3" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -42.5281, 10.6155, 13.3399 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform4" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 6, 47.1713, 7.02312, -7.12346 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform5" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 35.7226, 6.35768, -60.9993 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform6" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 58.8162, 3.36373, -33.1482 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform7" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, -25.0649, 7.06267, 38.5936 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Platforms/platform7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.835112, 0 )
+radius = 2.7
+height = 2.0
+material = SubResource( 2 )
+
+[node name="platform8" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.3614, 9.01174, -43.3074 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform9" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.8247, 13.3488, -17.8172 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform10" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -5.38576, 13.3488, -30.0083 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform11" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -5.87482, 13.3488, 24.8136 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform12" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 30.0244, 11.4493, 15.6525 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform14" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.6288, 11.4493, 40.6642 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="platform13" type="CSGCylinder" parent="Platforms"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.0983, 12.9881, 29.0249 )
+use_collision = true
+radius = 3.0
+height = 0.5
+material = SubResource( 1 )
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.01047, -23.5921 )
+moveSpeed = 5
+distancePatrolRight = 30.0
+
+[node name="Bouncepads" type="Spatial" parent="."]
+
+[node name="Bouncepad2" parent="Bouncepads" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8799, 0.427162, 18.7372 )
+bounceheight = 40
+
+[node name="floor" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31985, -0.205997, -8.88403 )
+use_collision = true
+radius = 80.0
+sides = 22
+material = SubResource( 3 )
+
+[node name="border" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31985, 18.8901, -8.88403 )
+use_collision = true
+radius = 80.0
+height = 40.0
+sides = 22
+material = SubResource( 4 )
